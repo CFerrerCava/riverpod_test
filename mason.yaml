@@ -4,3 +4,5 @@ bricks:
       url: "https://github.com/felangel/mason.git"
       path: bricks/hello_world
   flutter_bloc_feature: ^0.4.0
+  future_brick:
+    path: bricks/future_brick
