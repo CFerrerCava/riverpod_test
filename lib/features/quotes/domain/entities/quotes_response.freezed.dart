@@ -20,15 +20,15 @@ QuotesResponse _$QuotesResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$QuotesResponse {
-  @JsonKey(name: "_id")
+  @JsonKey(name: '_id')
   String? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: "text")
+  @JsonKey(name: 'text')
   String? get text => throw _privateConstructorUsedError;
-  @JsonKey(name: "author")
+  @JsonKey(name: 'author')
   String? get author => throw _privateConstructorUsedError;
-  @JsonKey(name: "numberOfVotes")
+  @JsonKey(name: 'numberOfVotes')
   int? get numberOfVotes => throw _privateConstructorUsedError;
-  @JsonKey(name: "rating")
+  @JsonKey(name: 'rating')
   double? get rating => throw _privateConstructorUsedError;
 
   /// Serializes this QuotesResponse to a JSON map.
@@ -48,11 +48,11 @@ abstract class $QuotesResponseCopyWith<$Res> {
       _$QuotesResponseCopyWithImpl<$Res, QuotesResponse>;
   @useResult
   $Res call(
-      {@JsonKey(name: "_id") String? id,
-      @JsonKey(name: "text") String? text,
-      @JsonKey(name: "author") String? author,
-      @JsonKey(name: "numberOfVotes") int? numberOfVotes,
-      @JsonKey(name: "rating") double? rating});
+      {@JsonKey(name: '_id') String? id,
+      @JsonKey(name: 'text') String? text,
+      @JsonKey(name: 'author') String? author,
+      @JsonKey(name: 'numberOfVotes') int? numberOfVotes,
+      @JsonKey(name: 'rating') double? rating});
 }
 
 /// @nodoc
@@ -110,11 +110,11 @@ abstract class _$$QuotesResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "_id") String? id,
-      @JsonKey(name: "text") String? text,
-      @JsonKey(name: "author") String? author,
-      @JsonKey(name: "numberOfVotes") int? numberOfVotes,
-      @JsonKey(name: "rating") double? rating});
+      {@JsonKey(name: '_id') String? id,
+      @JsonKey(name: 'text') String? text,
+      @JsonKey(name: 'author') String? author,
+      @JsonKey(name: 'numberOfVotes') int? numberOfVotes,
+      @JsonKey(name: 'rating') double? rating});
 }
 
 /// @nodoc
@@ -165,29 +165,29 @@ class __$$QuotesResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$QuotesResponseImpl implements _QuotesResponse {
   const _$QuotesResponseImpl(
-      {@JsonKey(name: "_id") this.id,
-      @JsonKey(name: "text") this.text,
-      @JsonKey(name: "author") this.author,
-      @JsonKey(name: "numberOfVotes") this.numberOfVotes,
-      @JsonKey(name: "rating") this.rating});
+      {@JsonKey(name: '_id') this.id,
+      @JsonKey(name: 'text') this.text,
+      @JsonKey(name: 'author') this.author,
+      @JsonKey(name: 'numberOfVotes') this.numberOfVotes,
+      @JsonKey(name: 'rating') this.rating});
 
   factory _$QuotesResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$QuotesResponseImplFromJson(json);
 
   @override
-  @JsonKey(name: "_id")
+  @JsonKey(name: '_id')
   final String? id;
   @override
-  @JsonKey(name: "text")
+  @JsonKey(name: 'text')
   final String? text;
   @override
-  @JsonKey(name: "author")
+  @JsonKey(name: 'author')
   final String? author;
   @override
-  @JsonKey(name: "numberOfVotes")
+  @JsonKey(name: 'numberOfVotes')
   final int? numberOfVotes;
   @override
-  @JsonKey(name: "rating")
+  @JsonKey(name: 'rating')
   final double? rating;
 
   @override
@@ -232,29 +232,29 @@ class _$QuotesResponseImpl implements _QuotesResponse {
 
 abstract class _QuotesResponse implements QuotesResponse {
   const factory _QuotesResponse(
-      {@JsonKey(name: "_id") final String? id,
-      @JsonKey(name: "text") final String? text,
-      @JsonKey(name: "author") final String? author,
-      @JsonKey(name: "numberOfVotes") final int? numberOfVotes,
-      @JsonKey(name: "rating") final double? rating}) = _$QuotesResponseImpl;
+      {@JsonKey(name: '_id') final String? id,
+      @JsonKey(name: 'text') final String? text,
+      @JsonKey(name: 'author') final String? author,
+      @JsonKey(name: 'numberOfVotes') final int? numberOfVotes,
+      @JsonKey(name: 'rating') final double? rating}) = _$QuotesResponseImpl;
 
   factory _QuotesResponse.fromJson(Map<String, dynamic> json) =
       _$QuotesResponseImpl.fromJson;
 
   @override
-  @JsonKey(name: "_id")
+  @JsonKey(name: '_id')
   String? get id;
   @override
-  @JsonKey(name: "text")
+  @JsonKey(name: 'text')
   String? get text;
   @override
-  @JsonKey(name: "author")
+  @JsonKey(name: 'author')
   String? get author;
   @override
-  @JsonKey(name: "numberOfVotes")
+  @JsonKey(name: 'numberOfVotes')
   int? get numberOfVotes;
   @override
-  @JsonKey(name: "rating")
+  @JsonKey(name: 'rating')
   double? get rating;
 
   /// Create a copy of QuotesResponse
