@@ -23,6 +23,7 @@ dependencies:
   retrofit: ^4.4.2
   retrofit_generator: ^9.1.7
   riverpod: ^2.6.1
+  shared_preferences: ^2.5.1
 
 dev_dependencies: 
   build_runner: ^2.4.14
@@ -36,3 +37,13 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/
+    - assets/icons/
+    - assets/icons/weather_icons/
+    - assets/fonts/
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/roboto_condensed.ttf
+        - asset: assets/fonts/roboto_condensed_italic.ttf

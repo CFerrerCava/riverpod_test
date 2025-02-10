@@ -5,6 +5,7 @@ import 'package:riverpod_test/features/quotes/presentation/screen/quotes_screen.
 import 'package:riverpod_test/features/simple_notes/presentation/screen/simple_notes_screen.dart';
 import 'package:riverpod_test/features/theme_switcher/presentation/screens/theme_switcher_screen.dart';
 import 'package:riverpod_test/features/todo_app/presentation/screen/todo_app_screen.dart';
+import 'package:riverpod_test/l10n/presentation/screen/weather_app_screen.dart';
 
 class Routes {
   // Prevent instantiation
@@ -17,6 +18,8 @@ class Routes {
   static const String quotes = '/quotes';
   static const String todoApp = '/todo-app';
 
+  static const String weatherApp = '/weather-app';
+
   // You can add navigation methods here if needed
   static Map<String, Widget Function(BuildContext)> get routeNames => {
         home: (context) => const HomeScreen(),
@@ -25,5 +28,6 @@ class Routes {
         simpleNotes: (context) => const SimpleNotesScreen(),
         quotes: (context) => const QuotesScreen(),
         todoApp: (context) => const TodoAppScreen(),
+        weatherApp: (context) => const WeatherAppScreen(),
       };
 }
