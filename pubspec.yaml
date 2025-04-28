@@ -22,7 +22,7 @@ dependencies:
   json_annotation: ^4.9.0
   location: ^8.0.0
   retrofit: ^4.4.2
-  retrofit_generator: ^9.1.7
+  retrofit_generator: ^9.1.9
   riverpod: ^2.6.1
   shared_preferences: ^2.5.1
   visibility_detector: ^0.4.0+2
