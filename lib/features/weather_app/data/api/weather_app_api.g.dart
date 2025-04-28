@@ -18,19 +18,23 @@ class _WeatherAppApi implements WeatherAppApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<HttpResponse<WeatherResponse>> getWeather(
-    Map<String, dynamic> querie,
-  ) async {
+  Future<HttpResponse<WeatherResponse>> getWeather({
+    String? location,
+    String? timesteps,
+  }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(querie);
+    final queryParameters = <String, dynamic>{
+      r'location': location,
+      r'timesteps': timesteps,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<HttpResponse<WeatherResponse>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/weather/point',
+            '/weather/forecast',
             queryParameters: queryParameters,
             data: _data,
           )

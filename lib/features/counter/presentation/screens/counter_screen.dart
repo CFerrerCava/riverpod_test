@@ -1,15 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-final counterProvider = StateProvider<int>((ref) => 0);
+import 'package:riverpod_test/features/counter/presentation/providers/counter_provider.dart';
 
 class CounterScreen extends ConsumerWidget {
   const CounterScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<int>(counterProvider, (previus, next) {
+    ref.listen<int>(counterNotifierProvider, (previus, next) {
       if (kDebugMode) {
         print('previus: $previus');
         print('next: $next');
@@ -27,7 +26,7 @@ class CounterScreen extends ConsumerWidget {
               'You have pushed the button this many times:',
             ),
             Text(
-              '${ref.watch(counterProvider)}',
+              '${ref.watch(counterNotifierProvider)}',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],
@@ -35,7 +34,7 @@ class CounterScreen extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          ref.read(counterProvider.notifier).state++;
+          ref.read(counterNotifierProvider.notifier).state++;
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

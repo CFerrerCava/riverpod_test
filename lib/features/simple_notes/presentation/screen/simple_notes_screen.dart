@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_test/features/simple_notes/domain/entities/simple_note_model.dart';
-import 'package:riverpod_test/features/simple_notes/presentation/widgets/simple_note_item.dart';
 import 'package:riverpod_test/features/simple_notes/presentation/providers/form_provider.dart';
 import 'package:riverpod_test/features/simple_notes/presentation/providers/simple_notes_provider.dart';
+import 'package:riverpod_test/features/simple_notes/presentation/widgets/simple_note_item.dart';
 
 class SimpleNotesScreen extends ConsumerWidget {
   const SimpleNotesScreen({super.key});

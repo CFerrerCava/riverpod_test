@@ -52,5 +52,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+		<string>We need access to your location to provide weather information while the app is in use.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+		<string>We need access to your location at all times to provide weather updates even when the app is in the background.</string>
 </dict>
 </plist>

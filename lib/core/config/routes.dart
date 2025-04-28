@@ -4,8 +4,9 @@ import 'package:riverpod_test/features/home/home_screen.dart';
 import 'package:riverpod_test/features/quotes/presentation/screen/quotes_screen.dart';
 import 'package:riverpod_test/features/simple_notes/presentation/screen/simple_notes_screen.dart';
 import 'package:riverpod_test/features/theme_switcher/presentation/screens/theme_switcher_screen.dart';
+import 'package:riverpod_test/features/tiktok_scroller/tiktok_explorer_screen.dart';
 import 'package:riverpod_test/features/todo_app/presentation/screen/todo_app_screen.dart';
-import 'package:riverpod_test/l10n/presentation/screen/weather_app_screen.dart';
+import 'package:riverpod_test/features/weather_app/presentation/screen/weather_app_page.dart';
 
 class Routes {
   // Prevent instantiation
@@ -19,6 +20,7 @@ class Routes {
   static const String todoApp = '/todo-app';
 
   static const String weatherApp = '/weather-app';
+  static const String tiktokExplorer = '/tiktok-explorer';
 
   // You can add navigation methods here if needed
   static Map<String, Widget Function(BuildContext)> get routeNames => {
@@ -28,6 +30,7 @@ class Routes {
         simpleNotes: (context) => const SimpleNotesScreen(),
         quotes: (context) => const QuotesScreen(),
         todoApp: (context) => const TodoAppScreen(),
-        weatherApp: (context) => const WeatherAppScreen(),
+        weatherApp: (context) => const WeatherAppPage(),
+        tiktokExplorer: (context) => const TiktokExplorerScreen(),
       };
 }

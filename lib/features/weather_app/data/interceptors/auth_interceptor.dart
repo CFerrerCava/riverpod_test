@@ -6,14 +6,15 @@ class AuthInterceptor {
     return InterceptorsWrapper(
       onRequest: (options, handler) async {
         // you can add your token here
-        final shared = SharedPreferencesService();
-        final token = await shared.getWeatherApiKey();
-        if (token?.isNotEmpty ?? false) {
-          options.headers.addAll({
-            'Content-Type': 'application/json',
-            'Authorization': token,
-          });
-        }
+        // final shared = SharedPreferencesService();
+        // final token = await shared.getWeatherApiKey();
+        // if (token?.isNotEmpty ?? false) {
+        options.queryParameters.addAll(
+          {
+            'apikey': 'vb2gh5spVR5Hm7HvlD1rKwAhFDAbXQv7',
+          },
+        );
+        // }
 
         /// also you can configure other options
         handler.next(options);

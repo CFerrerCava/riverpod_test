@@ -4,7 +4,9 @@ import 'package:riverpod_test/features/weather_app/data/api/weather_app_api.dart
 import 'package:riverpod_test/features/weather_app/domain/weather_app_entities.dart';
 
 sealed class WeatherAppRepositoryMethods {
-  Future<HttpResponse<WeatherResponse>> getWeather(Map<String, dynamic> querie);
+  Future<HttpResponse<WeatherResponse>> getWeather(
+    WeatherRequest request,
+  );
 }
 
 class WeatherAppRepoImpl implements WeatherAppRepositoryMethods {
@@ -16,8 +18,11 @@ class WeatherAppRepoImpl implements WeatherAppRepositoryMethods {
 
   @override
   Future<HttpResponse<WeatherResponse>> getWeather(
-    Map<String, dynamic> querie,
+    WeatherRequest request,
   ) async {
-    return _api.getWeather(querie);
+    return _api.getWeather(
+      location: request.location,
+      timesteps: request.timesteps,
+    );
   }
 }

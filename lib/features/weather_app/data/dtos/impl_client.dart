@@ -4,10 +4,12 @@ import 'package:riverpod_test/features/weather_app/data/interceptors/auth_interc
 class ImplClient extends AbstractDioClient {
   ImplClient()
       : super(
-          baseUrl: 'https://api.stormglass.io/v2',
-          enableLogging: false,
+          baseUrl: 'https://api.tomorrow.io/v4',
           customInterceptors: [
             AuthInterceptor().create(),
           ],
+          customHeaders: {
+            'accept-encoding': 'deflate, gzip, br',
+          },
         );
 }

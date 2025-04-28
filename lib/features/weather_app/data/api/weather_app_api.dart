@@ -8,8 +8,9 @@ part 'weather_app_api.g.dart';
 abstract class WeatherAppApi {
   factory WeatherAppApi(Dio dio) = _WeatherAppApi;
 
-  @GET('/weather/point')
-  Future<HttpResponse<WeatherResponse>> getWeather(
-    @Queries() Map<String, dynamic> querie,
-  );
+  @GET('/weather/forecast')
+  Future<HttpResponse<WeatherResponse>> getWeather({
+    @Query('location') String? location,
+    @Query('timesteps') String? timesteps,
+  });
 }

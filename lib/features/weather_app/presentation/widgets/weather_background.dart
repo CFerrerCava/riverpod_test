@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:riverpod_test/features/weather_app/domain/weather_app_entities.dart';
 
 class WeatherBackground extends StatelessWidget {
-  const WeatherBackground({super.key});
+  const WeatherBackground({super.key, this.data});
+  final WeatherInfoModel? data;
 
   @override
   Widget build(BuildContext context) {

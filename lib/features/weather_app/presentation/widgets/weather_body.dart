@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod_test/core/utils/image_service.dart';
+import 'package:riverpod_test/features/weather_app/domain/weather_app_entities.dart';
+import 'package:riverpod_test/features/weather_app/presentation/controllers/weather_util.dart';
+import 'package:riverpod_test/features/weather_app/presentation/widgets/weather_wow_description_widget.dart';
 
 class WeatherBody extends StatelessWidget {
-  const WeatherBody({super.key});
+  const WeatherBody({super.key, this.data});
+
+  final WeatherInfoModel? data;
 
   @override
   Widget build(BuildContext context) {
@@ -12,40 +16,11 @@ class WeatherBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset(
-            ImageService.dayRain.value,
+            WeatherUtil.getWeatherIcon(data!.weatherType),
             width: 150,
           ),
           const Spacer(),
-          Text(
-            "It's \nfucking",
-            style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                  fontSize: 90,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.5,
-                  height: 0.9,
-                ),
-          ),
-          Text(
-            'raining.',
-            style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                  fontSize: 90,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.5,
-                  height: 0.9,
-                  foreground: Paint()
-                    ..style = PaintingStyle.stroke
-                    ..strokeWidth = 1,
-                ),
-          ),
-          Text(
-            'now.',
-            style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                  fontSize: 90,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.5,
-                  height: 0.9,
-                ),
-          ),
+          WeatherWowDescriptionWidget(weatherInfoModel: data!),
           const SizedBox(height: 150),
           const Divider(
             color: Colors.black,
@@ -71,7 +46,7 @@ class WeatherBody extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(right: 30),
                       child: Text(
-                        'Humidity: 80%   Wind: 10km/h',
+                        'Humidity: ${data!.humidity}%   Wind: ${data!.windSpeed}km/h',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                               color: const Color.fromARGB(255, 113, 113, 113),
                               fontWeight: FontWeight.w500,
@@ -79,7 +54,7 @@ class WeatherBody extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'Temperature: 20°C',
+                      'Temperature: ${data!.temperature}°C',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                             fontWeight: FontWeight.w500,
                           ),
@@ -96,7 +71,7 @@ class WeatherBody extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Text(
-                    '4 PM',
+                    data!.time,
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                           fontSize: 55,
                           fontWeight: FontWeight.w600,
